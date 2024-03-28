@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- include htmx -->
+    <script
+      src="https://unpkg.com/htmx.org@1.6.0"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <h1>HTMLX websockets sample</h1>
+
+    <!-- websocket connection -->
+    <div hx-ws="connect:/ws">
+      <!-- input for new messages, send a message to the backend
+      via websocket -->
+      <form hx-ws="send:submit">
+        <input name="chat_message" />
+      </form>
+    </div>
+
+    <!-- location for new messages from the server -->
+    <div id="content"></div>
+
+  </body>
+</html>

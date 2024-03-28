@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title> Sample image fetched randomly </title>
+<script>
+getRandomNumber() {
+	num = Math.floor(Math.random()*10)
+	console.log(num);
+  return (num);
+}
+
+</script>
+  </head>
+
+<body>
+ <img src="https://source.unsplash.com/random/?pilates#<%+new Date().getTime()%>" alt="" />
+
+</html>
