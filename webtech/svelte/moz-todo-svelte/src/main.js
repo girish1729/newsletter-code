@@ -1,6 +1,6 @@
-import App from './App.svelte';
+import Conditional from './Conditional.svelte';
 
-const app = new App({
+const app = new Conditional({
 	target: document.body,
 	props: {
 		name: 'world'
