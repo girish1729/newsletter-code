@@ -1,16 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-	<title> Sample image fetched randomly </title>
-<script>
-getRandomNumber() {
-	num = Math.floor(Math.random()*10)
-	console.log(num);
-  return (num);
-}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-</script>
-  </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    
+    <link rel="stylesheet" href="/css/site.css">
+    <script src="/js/htmx.js"></script>
+    <script src="/js/class-tools.js"></script>
+    <script src="/js/preload.js"></script>
+    <script src="/js/_hyperscript.js"></script>
+
+<html>
+	<title> Sample image fetched randomly </title>
+ </head>
+
 
 <body>
  <img src="https://source.unsplash.com/random/?pilates#<%+new Date().getTime()%>" alt="" />
