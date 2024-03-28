@@ -3,33 +3,48 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
-  
-<title>Infinite Scroll</title>
-    <link rel="canonical" href="https://htmx.org/examples/infinite-scroll/">
+    <meta name="description" content="htmx gives you access to AJAX, CSS
+Transitions, WebSockets and Server Sent Events directly in HTML, using
+attributes, so you can build modern user interfaces with the simplicity
+and power of hypertext
+
+    htmx is small (~14k min.gz’d), dependency-free, extendable, IE11
+compatible & has reduced code base sizes by 67% when compared with
+react">
     
+  
+<title>&lt;/&gt; htmx ~ Examples ~ Dialogs</title>
+    <link rel="canonical" href="https://htmx.org/examples/dialogs/">
+    
+    <link rel="alternate" type="application/atom+xml" title="Sitewide
+Atom feed" href="/atom.xml">
     <link rel="stylesheet" href="/css/site.css">
     <script src="/js/htmx.js"></script>
     <script src="/js/class-tools.js"></script>
     <script src="/js/preload.js"></script>
     <script src="/js/_hyperscript.js"></script>
+    <meta name="generator" content="Zola v.TODO">
 </head>
 <body hx-ext="class-tools, preload">
-    
+
+
 
 
 <div class="c content ">
     
-  
     
   
-  <h1>Infinite Scroll</h1>
+  <h1>Browser Dialogs</h1>
   <script src="https://unpkg.com/sinon@9.0.2/pkg/sinon.js"></script>
   <script src="/js/demo.js"></script>
-  <p>The infinite scroll pattern provides a way to load content
-dynamically on user scrolling action.</p>
-<p>Let’s focus on the final row (or the last element of your
-content):</p>
+
+  <p>Dialogs can be triggered with the <a
+href="https://htmx.org/attributes/hx-prompt/"><code>hx-prompt</code></a>
+and <a
+href="https://htmx.org/attributes/hx-confirm/"><code>hx-confirm</code></a>attributes.
+These are triggered by the user interaction that would trigger the AJAX
+request, but the request is only sent if the dialog is accepted.</p>
+
 <style>
   #demo-server-info {
       padding: 8px;
@@ -96,81 +111,47 @@ pointer">&uparrow; Show</a></div>
   </div>
 </div>
 
-<h2><a class="zola-anchor" href="#demo" ></a>Sample table</h2>
-
+<h2><a class="zola-anchor" href="#demo" aria-label="Anchor link for:
+demo">🔗</a>Demo</h2>
 <div id="demo-canvas">
 </div>
 <script>
-    server.autoRespondAfter = 1000; // longer response for more drama
 
     //=========================================================================
     // Fake Server Side Code
     //=========================================================================
 
-    // data
-    var dataStore = function(){
-      var contactId = 9;
-      function generateContact() {
-        contactId++;
-        var idHash = "";
-        var possible = "ABCDEFG0123456789";
-        for( var i=0; i < 10; i++ ) idHash +=
-possible.charAt(Math.floor(Math.random() * possible.length));
-        return { name: "Agent Smith", email: "void" + contactId +
-"@null.org", id: idHash }
-      }
-      return {
-        contactsForPage : function(page) {
-          var vals = [];
-          for( var i=0; i < 20; i++ ){
-            vals.push(generateContact());
-          }
-          return vals;
-        }
-      }
-    }()
-    
     // routes
     init("/demo", function(request, params){
-      var contacts = dataStore.contactsForPage(1)
-      return tableTemplate(contacts)
+      return submitButton();
     });
-    
-    onGet(/\/contacts.*/, function(request, params){
-      var page = parseInt(params['page']);
-      var contacts = dataStore.contactsForPage(page)
-      return rowsTemplate(page, contacts);
+
+    onPost("/submit", function(request, params){
+        var response = request.requestHeaders['HX-Prompt'];
+        return promptSubmit(response);
     });
-    
+
     // templates
-    function tableTemplate(contacts) {
-      return `<table
-hx-indicator=".htmx-indicator"><thead><tr><th>Name</th><th>Email</th><th>ID</th></tr></thead><tbody>
-              ${rowsTemplate(1, contacts)}
-              </tbody></table><center><img class="htmx-indicator"
-width="60" src="/img/bars.svg"></center>`
+    function submitButton() {
+      return `<div>
+  <button class="btn"
+          hx-post="/submit"
+          hx-prompt="Enter a string"
+          hx-confirm="Are you sure?"
+          hx-target="#response">
+    Prompt Submission
+  </button>
+  <div id="response"></div>
+</div>`;
     }
 
-    function rowsTemplate(page, contacts) {
-      var txt = "";
-      var trigger_attributes = "";
-
-      for (var i = 0; i < contacts.length; i++) {
-        var c = contacts[i];
-
-        if (i == (contacts.length - 1)) {
-         trigger_attributes = ` hx-get="/contacts/?page=${page + 1}"
-hx-trigger="revealed" hx-swap="afterend"`
-        }
-
-        txt += "<tr" + trigger_attributes +"><td>" + c.name +
-"</td><td>" + c.email + "</td><td>" + c.id + "</td></tr>\n";
-      }
-      return txt;
+    function promptSubmit(response) {
+        return `User entered <i>${response}</i>`;
     }
 </script>
 
 </div>
+
 </body>
 </html>
 
