@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="htmx gives you access to AJAX, CSS
+Transitions, WebSockets and Server Sent Events directly in HTML, using
+attributes, so you can build modern user interfaces with the simplicity
+and power of hypertext
+
+    htmx is small (~14k min.gz’d), dependency-free, extendable, IE11
+compatible & has reduced code base sizes by 67% when compared with
+react">
+    
+  
+<title>&lt;/&gt; htmx ~ Examples ~ A Customized Confirmation UI</title>
+    <link rel="canonical" href="https://htmx.org/examples/confirm/">
+    
+    <link rel="alternate" type="application/atom+xml" title="Sitewide
+Atom feed" href="/atom.xml">
+    <link rel="stylesheet" href="/css/site.css">
+    <script src="/js/htmx.js"></script>
+    <script src="/js/class-tools.js"></script>
+    <script src="/js/preload.js"></script>
+    <script src="/js/_hyperscript.js"></script>
+    <meta name="generator" content="Zola v.TODO">
+</head>
+<body hx-ext="class-tools, preload">
+
+
+    
+
+
+<div class="c content ">
+    
+  
+    
+  
+  <h1>A Customized Confirmation UI</h1>
+  <script src="https://unpkg.com/sinon@9.0.2/pkg/sinon.js"></script>
+  <script src="/js/demo.js"></script>
+  <p>htmx supports the <a
+href="https://htmx.org/attributes/hx-confirm/"><code>hx-confirm</code></a>
+attribute to provide a simple mechanism for confirming a user
+action.  This uses the default <code>confirm()</code> function in
+javascript which, while trusty, may not be consistent with your 
+applications UX.</p>
+<p>In this example we will see how to use <a rel="noopener"
+target="_blank" href="https://sweetalert2.github.io">sweetalert2</a>  to
+implement a custom confirmation dialog. Below are two 
+examples, one using a click+custom event method, and one using the
+built-in <code>hx-confirm</code> attribute and
+the and the <a
+href="https://htmx.org/events/#htmx:confirm"><code>htmx:confirm</code></a>
+event.</p>
+<h2 id="using-on-click-custom-event"><a class="zola-anchor"
+href="#using-on-click-custom-event" aria-label="Anchor link for:
+using-on-click-custom-event">#</a>Using on click+custom event</h2>
+<pre data-lang="html" style="background-color:#1f2329;color:#abb2bf;"
+class="language-html "><code class="language-html"
+data-lang="html"><span>&lt;</span><span style="color:#e06c75;">script
+</span><span style="color:#d19a66;">src</span><span>=</span><span
+style="color:#98c379;">&quot;https://cdn.jsdelivr.net/npm/sweetalert2@11&quot;</span><span>&gt;&lt;/</span><span
+style="color:#e06c75;">script</span><span>&gt;
+</span><span>&lt;</span><span style="color:#e06c75;">button </span><span
+style="color:#d19a66;">hx-get</span><span>=</span><span
+style="color:#98c379;">&quot;/confirmed&quot; 
+</span><span>        </span><span
+style="color:#d19a66;">hx-trigger</span><span>=</span><span
+style="color:#98c379;">&#39;confirmed&#39;
+</span><span>        </span><span
+style="color:#d19a66;">onClick</span><span>=</span><span
+style="color:#98c379;">&quot;Swal.fire({title: &#39;Confirm&#39;,
+text:&#39;Do you want to continue?&#39;}).then(function(result){
+</span><span style="color:#98c379;">            if(result.isConfirmed){
+</span><span style="color:#98c379;">              htmx.trigger(this,
+&#39;confirmed&#39;);  
+</span><span style="color:#98c379;">            } 
+</span><span style="color:#98c379;">        })&quot;</span><span>&gt;
+</span><span>  Click Me
+</span><span>&lt;/</span><span
+style="color:#e06c75;">button</span><span>&gt;
+</span></code></pre>
+<p>Here we use javascript to show a Sweet Alert 2 on a click, asking for
+confirmation.  If the user confirms
+the dialog, we then trigger the request by triggering the custom
+“confirmed” event
+which is then picked up by <code>hx-trigger</code>.</p>
+<h2 id="vanilla-js-hx-confirm"><a class="zola-anchor"
+href="#vanilla-js-hx-confirm" aria-label="Anchor link for:
+vanilla-js-hx-confirm">#</a>Vanilla JS, hx-confirm</h2>
+<pre data-lang="html" style="background-color:#1f2329;color:#abb2bf;"
+class="language-html "><code class="language-html"
+data-lang="html"><span>&lt;</span><span style="color:#e06c75;">script
+</span><span style="color:#d19a66;">src</span><span>=</span><span
+style="color:#98c379;">&quot;https://cdn.jsdelivr.net/npm/sweetalert2@11&quot;</span><span>&gt;&lt;/</span><span
+style="color:#e06c75;">script</span><span>&gt;
+</span><span>&lt;</span><span
+style="color:#e06c75;">script</span><span>&gt;
+</span><span>  document.</span><span
+style="color:#e06c75;">addEventListener</span><span>(</span><span
+style="color:#98c379;">&quot;htmx:confirm&quot;</span><span>,
+</span><span style="color:#c678dd;">function</span><span>(e) {
+</span><span>    </span><span
+style="color:#e06c75;">e</span><span>.</span><span
+style="color:#e06c75;">preventDefault</span><span>()
+</span><span>    </span><span
+style="color:#e5c07b;">Swal</span><span>.</span><span
+style="color:#e06c75;">fire</span><span>({
+</span><span>      title: </span><span
+style="color:#98c379;">&quot;Proceed?&quot;</span><span>,
+</span><span>      text: </span><span style="color:#98c379;">`I ask
+you... </span><span>${</span><span
+style="color:#e06c75;">e</span><span>.detail.question}</span><span
+style="color:#98c379;">`
+</span><span>    }).</span><span
+style="color:#e06c75;">then</span><span>(</span><span
+style="color:#c678dd;">function</span><span>(result) {
+</span><span>      </span><span
+style="color:#c678dd;">if</span><span>(</span><span
+style="color:#e06c75;">result</span><span>.isConfirmed) </span><span
+style="color:#e06c75;">e</span><span>.detail.</span><span
+style="color:#e06c75;">issueRequest</span><span>(</span><span
+style="color:#d19a66;">true</span><span>) </span><span
+style="font-style:italic;color:#848da1;">// use true to skip
+window.confirm
+</span><span>    })
+</span><span>  })
+</span><span>&lt;/</span><span
+style="color:#e06c75;">script</span><span>&gt;
+</span><span>  
+</span><span>&lt;</span><span style="color:#e06c75;">button </span><span
+style="color:#d19a66;">hx-get</span><span>=</span><span
+style="color:#98c379;">&quot;/confirmed&quot; </span><span
+style="color:#d19a66;">hx-confirm</span><span>=</span><span
+style="color:#98c379;">&quot;Some confirm text
+here&quot;</span><span>&gt;
+</span><span>  Click Me
+</span><span>&lt;/</span><span
+style="color:#e06c75;">button</span><span>&gt;
+</span></code></pre>
+<p>We add some javascript to invoke Sweet Alert 2 on a click, asking for
+confirmation.  If the user confirms
+the dialog, we trigger the request by calling the
+<code>issueRequest</code> method. We pass
+<code>skipConfirmation=true</code> as argument to skip
+<code>window.confirm</code>.</p>
+<p>This allows to use <code>hx-confirm</code>’s value in the prompt
+which is convenient
+when the question depends on the element e.g. a django list:</p>
+<pre data-lang="html" style="background-color:#1f2329;color:#abb2bf;"
+class="language-html "><code class="language-html"
+data-lang="html"><span>{% for client in clients %}
+</span><span>&lt;</span><span style="color:#e06c75;">button </span><span
+style="color:#d19a66;">hx-post</span><span>=</span><span
+style="color:#98c379;">&quot;/delete/{{client.pk}}&quot; </span><span
+style="color:#d19a66;">hx-confirm</span><span>=</span><span
+style="color:#98c379;">&quot;Delete
+{{client.name}}??&quot;</span><span>&gt;Delete&lt;/</span><span
+style="color:#e06c75;">button</span><span>&gt;
+</span><span>{% endfor %}
+</span></code></pre>
+
+</div>
+
+</body>
+</html>
+
