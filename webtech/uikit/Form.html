@@ -19,6 +19,238 @@
 
 
 
+<form>
+    <fieldset class="uk-fieldset">
 
+        <legend class="uk-legend">Legend</legend>
+
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="Input"
+aria-label="Input">
+        </div>
+
+        <div class="uk-margin">
+            <select class="uk-select" aria-label="Select">
+                <option>Option 01</option>
+                <option>Option 02</option>
+            </select>
+        </div>
+
+        <div class="uk-margin">
+            <textarea class="uk-textarea" rows="5"
+placeholder="Textarea" aria-label="Textarea"></textarea>
+        </div>
+
+        <div class="uk-margin uk-grid-small uk-child-width-auto
+uk-grid">
+            <label><input class="uk-radio" type="radio" name="radio2"
+checked> A</label>
+            <label><input class="uk-radio" type="radio" name="radio2">
+B</label>
+        </div>
+
+        <div class="uk-margin uk-grid-small uk-child-width-auto
+uk-grid">
+            <label><input class="uk-checkbox" type="checkbox" checked>
+A</label>
+            <label><input class="uk-checkbox" type="checkbox"> B</label>
+        </div>
+
+        <div class="uk-margin">
+            <input class="uk-range" type="range" value="2" min="0"
+max="10" step="0.1" aria-label="Range">
+        </div>
+
+    </fieldset>
+</form>
+
+<div class="uk-margin">
+    <input class="uk-input uk-form-danger uk-form-width-medium"
+type="text" placeholder="form-danger" aria-label="form-danger"
+value="form-danger">
+</div>
+
+<div class="uk-margin">
+    <input class="uk-input uk-form-success uk-form-width-medium"
+type="text" placeholder="form-success" aria-label="form-success"
+value="form-success">
+</div>
+
+<div class="uk-margin">
+    <input class="uk-input uk-form-width-medium" type="text"
+placeholder="disabled" aria-label="disabled" value="disabled" disabled>
+</div>
+
+<form>
+
+    <div class="uk-margin">
+        <input class="uk-input uk-form-width-large" type="text"
+placeholder="Large" aria-label="Large">
+    </div>
+
+    <div class="uk-margin">
+        <input class="uk-input uk-form-width-medium" type="text"
+placeholder="Medium" aria-label="Medium">
+    </div>
+
+    <div class="uk-margin">
+        <input class="uk-input uk-form-width-small" type="text"
+placeholder="Small" aria-label="Small">
+    </div>
+
+    <div class="uk-margin">
+        <input class="uk-input uk-form-width-xsmall" type="text"
+placeholder="X-Small" aria-label="X-Small">
+    </div>
+
+</form>
+
+<form class="uk-form-stacked">
+
+    <div class="uk-margin">
+        <label class="uk-form-label"
+for="form-stacked-text">Text</label>
+        <div class="uk-form-controls">
+            <input class="uk-input" id="form-stacked-text" type="text"
+placeholder="Some text...">
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <label class="uk-form-label"
+for="form-stacked-select">Select</label>
+        <div class="uk-form-controls">
+            <select class="uk-select" id="form-stacked-select">
+                <option>Option 01</option>
+                <option>Option 02</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <div class="uk-form-label">Radio</div>
+        <div class="uk-form-controls">
+            <label><input class="uk-radio" type="radio" name="radio1">
+Option 01</label><br>
+            <label><input class="uk-radio" type="radio" name="radio1">
+Option 02</label>
+        </div>
+    </div>
+
+</form>
+
+<form class="uk-form-horizontal uk-margin-large">
+
+    <div class="uk-margin">
+        <label class="uk-form-label"
+for="form-horizontal-text">Text</label>
+        <div class="uk-form-controls">
+            <input class="uk-input" id="form-horizontal-text"
+type="text" placeholder="Some text...">
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <label class="uk-form-label"
+for="form-horizontal-select">Select</label>
+        <div class="uk-form-controls">
+            <select class="uk-select" id="form-horizontal-select">
+                <option>Option 01</option>
+                <option>Option 02</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <div class="uk-form-label">Radio</div>
+        <div class="uk-form-controls uk-form-controls-text">
+            <label><input class="uk-radio" type="radio" name="radio1">
+Option 01</label><br>
+            <label><input class="uk-radio" type="radio" name="radio1">
+Option 02</label>
+        </div>
+    </div>
+
+</form>
+
+<form>
+
+    <div class="uk-margin">
+        <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: user"></span>
+            <input class="uk-input" type="text" aria-label="Not
+clickable icon">
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <div class="uk-inline">
+            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon:
+lock"></span>
+            <input class="uk-input" type="text" aria-label="Not
+clickable icon">
+        </div>
+    </div>
+
+</form>
+
+	<h2> Grid form </h2>
+
+<form class="uk-grid-small" uk-grid>
+    <div class="uk-width-1-1">
+        <input class="uk-input" type="text" placeholder="100"
+aria-label="100">
+    </div>
+    <div class="uk-width-1-2@s">
+        <input class="uk-input" type="text" placeholder="50"
+aria-label="50">
+    </div>
+    <div class="uk-width-1-4@s">
+        <input class="uk-input" type="text" placeholder="25"
+aria-label="25">
+    </div>
+    <div class="uk-width-1-4@s">
+        <input class="uk-input" type="text" placeholder="25"
+aria-label="25">
+    </div>
+    <div class="uk-width-1-2@s">
+        <input class="uk-input" type="text" placeholder="50"
+aria-label="50">
+    </div>
+    <div class="uk-width-1-2@s">
+        <input class="uk-input" type="text" placeholder="50"
+aria-label="50">
+    </div>
+</form>
+
+
+<form>
+
+    <div class="uk-margin">
+        <div uk-form-custom>
+            <input type="file" aria-label="Custom controls">
+            <button class="uk-button uk-button-default" type="button"
+tabindex="-1">Select</button>
+        </div>
+    </div>
+
+    <div class="uk-margin">
+        <span class="uk-text-middle">Here is a text</span>
+        <div uk-form-custom>
+            <input type="file" aria-label="Custom controls">
+            <span class="uk-link">upload</span>
+        </div>
+    </div>
+
+    <div class="uk-margin" uk-margin>
+        <div uk-form-custom="target: true">
+            <input type="file" aria-label="Custom controls">
+            <input class="uk-input uk-form-width-medium" type="text"
+placeholder="Select file" aria-label="Custom controls" disabled>
+        </div>
+        <button class="uk-button uk-button-default">Submit</button>
+    </div>
+
+</form>
     </body>
 </html>
