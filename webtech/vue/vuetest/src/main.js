@@ -1,4 +1,4 @@
 import { createApp } from 'vue'
-import ListInput from './ListInput.vue'
+import TimerApp from './TimerApp.vue';
 
-createApp(ListInput).mount('#app')
+createApp(TimerApp).mount('#app')

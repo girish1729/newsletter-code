@@ -1,4 +1,4 @@
-pt>
+<script>
 	let cats = [
 		{ id: 'J---aiyznGQ', name: 'Keyboard Cat' },
 		{ id: 'z_AbfPXTKms', name: 'Maru' },

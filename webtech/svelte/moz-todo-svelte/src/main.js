@@ -1,11 +1,7 @@
-import Conditional from './Conditional.svelte';
-import Clock from './Clock.svelte';
+import EachFruit from './EachFruit.svelte';
 
-const app = new Clock({
+const app = new EachFruit({
 	target: document.body,
-	props: {
-		name: 'world'
-	}
 });
 
 export default app;
