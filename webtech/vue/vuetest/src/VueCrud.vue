@@ -5,8 +5,7 @@ https://eugenkiss.github.io/7guis/tasks/#crud
 <script setup>
 import { ref, reactive, computed, watch } from 'vue'
 
-const names = reactive(['Emil, Hans', 'Mustermann, Max', 'Tisch,
-Roman'])
+const names = reactive(['Emil, Hans', 'Mustermann, Max', 'Tisch, Roman'])
 const selected = ref('')
 const prefix = ref('')
 const first = ref('')
@@ -19,7 +18,7 @@ const filteredNames = computed(() =>
 )
 
 watch(selected, (name) => {
-  ;[last.value, first.value] = name.split(', ')
+  [last.value, first.value] = name.split(', ')
 })
 
 function create() {

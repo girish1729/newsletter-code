@@ -1,7 +1,7 @@
 <!-- https://eugenkiss.github.io/7guis/tasks#timer -->
-
 <script>
 	import { onDestroy } from 'svelte';
+	import { fade } from 'svelte/transition';
 
 	let elapsed = 0;
 	let duration = 5000;
@@ -22,19 +22,32 @@ elapsed);
 	onDestroy(() => {
 		cancelAnimationFrame(frame);
 	});
+
+	let visible = true;
 </script>
 
+	<center>
 <label>
-	elapsed time:
+	Elapsed time:
 	<progress value={elapsed / duration} />
 </label>
 
 <div>{(elapsed / 1000).toFixed(1)}s</div>
 
 <label>
-	duration:
+	Tweak Duration setting:
 	<input type="range" bind:value={duration} min="1" max="20000" />
 </label>
 
 <button on:click={() => (elapsed = 0)}>reset</button>
+
+<label>
+	<input type="checkbox" bind:checked={visible} />
+	visible
+</label>
+
+{#if visible}
+	<p transition:fade>Fades in and out</p>
+{/if}
+	</center>
 

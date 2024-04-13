@@ -1,4 +1,4 @@
 import { createApp } from 'vue'
-import TimerApp from './TimerApp.vue';
+import VueCrud from './VueCrud.vue';
 
-createApp(TimerApp).mount('#app')
+createApp(VueCrud).mount('#app')

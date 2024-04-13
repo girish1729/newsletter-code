@@ -3,7 +3,7 @@ Modal component with customizable slots and CSS transitions.
 -->
 
 <script setup>
-import Modal from './Modal.vue'
+import modal from './ModalChild.vue'
 import { ref } from 'vue'
 
 const showModal = ref(false)
@@ -16,7 +16,7 @@ const showModal = ref(false)
     <!-- use the modal component, pass in the prop -->
     <modal :show="showModal" @close="showModal = false">
       <template #header>
-        <h3>custom header</h3>
+        <h3>Modal test from vue</h3>
       </template>
     </modal>
   </Teleport>

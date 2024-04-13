@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({
+defineProps({
   show: Boolean
 })
 </script>
@@ -9,20 +9,26 @@ const props = defineProps({
     <div v-if="show" class="modal-mask">
       <div class="modal-container">
         <div class="modal-header">
-          <slot name="header">default header</slot>
+          <slot name="header">Sample modal</slot>
         </div>
 
         <div class="modal-body">
-          <slot name="body">default body</slot>
+          <slot name="body">Body of modal dialog</slot>
         </div>
 
         <div class="modal-footer">
           <slot name="footer">
-            default footer
+            Modal footer
             <button
               class="modal-default-button"
               @click="$emit('close')"
             >OK</button>
+            <button
+              class="modal-default-button"
+              @click="$emit('close')"
+            >Cancel</button>
+
+
           </slot>
         </div>
       </div>

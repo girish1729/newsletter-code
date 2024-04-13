@@ -33,7 +33,7 @@ function formatDate(v) {
 
 <template>
   <h1>Latest Vue Core Commits</h1>
-  <template v-for="branch in branches">
+  <template v-for="branch in branches" :key="branch" >
     <input type="radio"
       :id="branch"
       :value="branch"
@@ -43,7 +43,7 @@ function formatDate(v) {
   </template>
   <p>vuejs/vue@{{ currentBranch }}</p>
   <ul>
-    <li v-for="{ html_url, sha, author, commit } in commits">
+    <li v-for="{ html_url, sha, author, commit } in commits" :key="sha" >
       <a :href="html_url" target="_blank" class="commit">{{ sha.slice(0,
 7) }}</a>
       - <span class="message">{{ truncate(commit.message) }}</span><br>
