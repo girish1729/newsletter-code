@@ -1,6 +1,3 @@
-<!--
-https://eugenkiss.github.io/7guis/tasks/#flight
--->
 
 <script setup>
 import { ref, computed } from 'vue'
@@ -48,6 +45,8 @@ function pad(n, s = String(n)) {
 </script>
 
 <template>
+	<center>
+	<h1> Book a flight ticket using vue.js </h1>
   <select v-model="flightType">
     <option value="one-way flight">One-way Flight</option>
     <option value="return flight">Return Flight</option>
@@ -60,6 +59,7 @@ function pad(n, s = String(n)) {
 
   <p>{{ canBook ? '' : 'Return date must be after departure date.'
 }}</p>
+	</center>
 </template>
 
 <style>
@@ -68,14 +68,14 @@ input,
 button {
   display: block;
   margin: 0.5em 0;
-  font-size: 15px;
+  font-size: 18px;
+}
+button {
+  background: blue;
 }
 
 input[disabled] {
   color: #999;
 }
 
-p {
-  color: red;
-}
 </style>

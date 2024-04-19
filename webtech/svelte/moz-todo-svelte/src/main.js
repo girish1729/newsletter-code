@@ -1,6 +1,6 @@
-import scatterParent from './scatterParent.svelte';
+import Video from './Video.svelte';
 
-const app = new scatterParent({
+const app = new Video({
 	target: document.body,
 });
 

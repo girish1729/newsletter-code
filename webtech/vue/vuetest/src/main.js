@@ -1,4 +1,4 @@
 import { createApp } from 'vue'
-import VueCrud from './VueCrud.vue';
+import SampProj from './SampProj.vue';
 
-createApp(VueCrud).mount('#app')
+createApp(SampProj).mount('#app')
