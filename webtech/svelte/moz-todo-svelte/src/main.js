@@ -1,6 +1,6 @@
-import Video from './Video.svelte';
+import BarChart from './BarChart.svelte';
 
-const app = new Video({
+const app = new BarChart({
 	target: document.body,
 });
 

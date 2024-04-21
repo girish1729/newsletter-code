@@ -2,15 +2,15 @@
 	import { scaleLinear } from 'd3-scale';
 
 	const points = [
-		{ year: 1990, birthrate: 16.7 },
-		{ year: 1995, birthrate: 14.6 },
-		{ year: 2000, birthrate: 14.4 },
-		{ year: 2005, birthrate: 14 },
-		{ year: 2010, birthrate: 13 },
-		{ year: 2015, birthrate: 12.4 }
+		{ year: 2000, birthrate: 16.7 },
+		{ year: 2005, birthrate: 14.6 },
+		{ year: 2010, birthrate: 14.4 },
+		{ year: 2015, birthrate: 14 },
+		{ year: 2020, birthrate: 13 },
+		{ year: 2025, birthrate: 12.4 }
 	];
 
-	const xTicks = [1990, 1995, 2000, 2005, 2010, 2015];
+	const xTicks = [2000, 2005, 2010, 2015, 2020, 2025];
 	const yTicks = [0, 5, 10, 15, 20];
 	const padding = { top: 20, right: 15, bottom: 20, left: 25 };
 
@@ -33,10 +33,10 @@
 	$: barWidth = innerWidth / xTicks.length;
 </script>
 
-<h2>US birthrate by year</h2>
+<h2>US birthrate by year (sample data)</h2>
 
 <div class="chart" bind:clientWidth={width} bind:clientHeight={height}>
-	<svg>
+	<!--<svg> --.
 		<!-- y axis -->
 		<g class="axis y-axis">
 			{#each yTicks as tick}
@@ -71,7 +71,7 @@ yScale(point.birthrate)}
 				/>
 			{/each}
 		</g>
-	</svg>
+	<!-- </svg> -->
 </div>
 
 <style>
@@ -88,7 +88,7 @@ yScale(point.birthrate)}
 	svg {
 		position: relative;
 		width: 100%;
-		height: 200px;
+		height: 500px;
 	}
 
 	.tick {
@@ -103,8 +103,8 @@ yScale(point.birthrate)}
 	}
 
 	.tick text {
-		fill: #ccc;
 		text-anchor: start;
+		font-weight: 56px;
 	}
 
 	.tick.tick-0 line {
@@ -116,9 +116,9 @@ yScale(point.birthrate)}
 	}
 
 	.bars rect {
-		fill: #a11;
+		fill: red;
 		stroke: none;
-		opacity: 0.65;
+		opacity: 1;
 	}
 </style>
 
