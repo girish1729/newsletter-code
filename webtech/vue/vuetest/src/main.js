@@ -1,4 +1,4 @@
 import { createApp } from 'vue'
-import SampProj from './SampProj.vue';
+import FormFilling from './FormFilling.vue';
 
-createApp(SampProj).mount('#app')
+createApp(FormFilling).mount('#app')

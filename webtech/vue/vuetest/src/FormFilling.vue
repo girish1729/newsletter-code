@@ -1,8 +1,9 @@
-<!--
-We can create two-way bindings between state and form inputs using the
-v-model directive.
--->
 
+<style>
+h2 {
+	font-weight: 40px;
+}
+</style>
 <script setup>
 import { ref } from 'vue'
 
@@ -15,6 +16,8 @@ const multiSelected = ref(['A'])
 </script>
 
 <template>
+	<center>
+	<h1> Form filling with vue.js </h1>
   <h2>Text Input</h2>
   <input v-model="text"> {{ text }}
 
@@ -60,4 +63,5 @@ const multiSelected = ref(['A'])
     <option>C</option>
   </select>
   <span>Selected: {{ multiSelected }}</span>
+	</center>
 </template>

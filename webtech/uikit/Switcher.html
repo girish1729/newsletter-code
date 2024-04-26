@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Title</title>
+        <title>How to use switcher to change content panes</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -15,37 +15,204 @@
     </head>
     <body>
 
+	<h1 class="uk-flex uk-flex-center" > Using switcher for content panes </h1>
 
-<ul class="uk-subnav uk-subnav-pill" uk-switcher>
-    <li><a href="#">Item</a></li>
-    <li><a href="#">Item</a></li>
-    <li><a href="#">Item</a></li>
+<ul class="uk-subnav uk-subnav-pill" uk-switcher="animation: uk-animation-fade" uk-switcher>
+    <li><a href="#">First</a>
+
+    <li><a href="#">Second</a>
+
+	</li>
+    <li><a href="#">Third</a>
+
+	</li>
+    <li><a href="#">Fourth</a>
+
+	</li>
+    <li><a href="#">Fifth</a>
+
+	</li>
 </ul>
+
 <ul class="uk-switcher uk-margin">
-    <li>Hello! <a href="#" uk-switcher-item="2">Switch to item
+    <li>First! <a href="#" uk-switcher-item="2">Switch to item
 3</a></li>
-    <li>Hello again! <a href="#" uk-switcher-item="next">Next
+    <li>Second! <a href="#" uk-switcher-item="next">Next
 item</a></li>
-    <li>Bazinga! <a href="#" uk-switcher-item="previous">Previous
+    <li>Third! <a href="#" uk-switcher-item="previous">Previous
 item</a></li>
 </ul>
 
 <ul uk-tab>
-    <li><a href="#">Item</a></li>
-    <li><a href="#">Item</a></li>
-    <li><a href="#">Item</a></li>
+    <li><a href="#">First</a></li>
+    <li><a href="#">Second</a></li>
+    <li><a href="#">Third</a></li>
+    <li><a href="#">Fourth</a></li>
+    <li><a href="#">Fifth</a></li>
 </ul>
 
-<ul class="uk-switcher uk-margin">
-    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-    <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco
-laboris nisi ut aliquip ex ea commodo consequat.</li>
-    <li>Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur, sed do eiusmod.</li>
+<ul class="uk-switcher uk-margin animation: uk-animation-fade">
+    <li>
+		<h2> First tab </h2>
+
+There are three infallible ways of pleasing an author, and the three
+form a rising scale of compliment: 1, to tell him you have read
+one of his books; 2, to tell him you have read all of his books; 3,
+to ask him to let you read the manuscript of his forthcoming book.
+No. 1 admits you to his respect; No. 2 admits you to his admiration;
+No. 3 carries you clear into his heart.
+		-- Mark Twain, "Pudd'nhead Wilson's Calendar"
+    </li> 
+    <li>
+
+		<h2> Second tab </h2>
+A Tale of Two Cities LITE(tm)
+	-- by Charles Dickens
+
+	A lawyer who looks like a French Nobleman is executed in
+	his place.
+
+The Metamorphosis LITE(tm)
+	-- by Franz Kafka
+
+	A man turns into a bug and his family gets annoyed.
+
+Lord of the Rings LITE(tm)
+	-- by J. R. R. Tolkien
+
+	Some guys take a long vacation to throw a ring into a volcano.
+
+Hamlet LITE(tm)
+	-- by Wm. Shakespeare
+
+	A college student on vacation with family problems, a screwy
+	girl-friend and a mother who won't act her age.
+   </li>
+    <li class='uk-card uk-card-default'>
+
+		<h2> Third tab </h2>
+Courage is resistance to fear, mastery of fear--not absence of
+fear.  Except a creature be part coward it is not a compliment to
+say it is brave; it is merely a loose misapplication of the word.
+Consider the flea!--incomparably the bravest of all the creatures of
+God, if ignorance of fear were courage.  Whether you are asleep or
+awake he will attack you, caring nothing for the fact that in bulk
+and strength you are to him as are the massed armies of the earth
+to a sucking child; he lives both day and night and all days and
+nights in the very lap of peril and the immediate presence of death,
+and yet is no more afraid than is the man who walks the streets of
+a city that was threatened by an earthquake ten centuries before.
+When we speak of Clive, Nelson, and Putnam as men who "didn't know
+what fear was," we ought always to add the flea--and put him at the
+head of the procession.
+		-- Mark Twain, "Pudd'nhead Wilson's Calendar"
+    </li> 
+    <li>
+
+		<h2> Fourth tab </h2>
+Do not overtax your powers.
+
+"I wonder", he said to himself, "what's in a book while it's closed.
+Oh, I know it's full of letters printed on paper, but all the same,
+something must be happening, because as soon as I open it, there's a
+whole story with people I don't know yet and all kinds of adventures
+and battles."
+		-- Bastian B. Bux
+    </li> 
+    <li class='uk-card'>
+
+		<h2> Fifth tab </h2>
+Q:	How many Bell Labs Vice Presidents does it take to change a
+light bulb?  A:      That's proprietary information.  Answer available
+from AT&T on payment
+	of license fee (binary only).
+    </li>
 </ul>
 
+	<h2 class="uk-flex uk-flex-center" > Now without tabs</h2>
+<ul class="uk-subnav uk-subnav-pill" uk-switcher>
+    <li><a href="#">First</a></li>
+    <li><a href="#">Second</a></li>
+    <li><a href="#">Third</a></li>
+    <li><a href="#">Fourth</a></li>
+    <li><a href="#">Fifth</a></li>
+</ul>
 
+<div class="uk-switcher uk-margin">
+    <div>
+	<h2> First pane</h2>
+
+A Tale of Two Cities LITE(tm)
+	-- by Charles Dickens
+
+	A lawyer who looks like a French Nobleman is executed in his place.
+
+The Metamorphosis LITE(tm)
+	-- by Franz Kafka
+
+	A man turns into a bug and his family gets annoyed.
+
+Lord of the Rings LITE(tm)
+	-- by J. R. R. Tolkien
+
+	Some guys take a long vacation to throw a ring into a volcano.
+
+Hamlet LITE(tm)
+	-- by Wm. Shakespeare
+
+	A college student on vacation with family problems, a screwy
+	girl-friend and a mother who won't act her age.
+    </div>
+    <div>
+	<h2> Second pane</h2>
+
+A Tale of Two Cities LITE(tm)
+	-- by Charles Dickens
+
+	A lawyer who looks like a French Nobleman is executed in his place.
+
+The Metamorphosis LITE(tm)
+	-- by Franz Kafka
+
+	A man turns into a bug and his family gets annoyed.
+
+Lord of the Rings LITE(tm)
+	-- by J. R. R. Tolkien
+
+	Some guys take a long vacation to throw a ring into a volcano.
+
+Hamlet LITE(tm)
+	-- by Wm. Shakespeare
+
+	A college student on vacation with family problems, a screwy
+	girl-friend and a mother who won't act her age.
+    </div>
+    <div>
+	<h2> Third pane</h2>
+
+Q:	Why is Poland just like the United States?
+A:	In the United States you can't buy anything for zlotys and in
+	Poland you can't either, while in the U.S. you can get whatever
+	you want for dollars, just as you can in Poland.
+		-- being told in Poland, 1987
+    </div>
+    <div>
+	<h2> Fourth pane</h2>
+
+I will honour Christmas in my heart, and try to keep it all the year.  I
+will live in the Past, the Present, and the Future.  The Spirits of all
+Three shall strive within me.  I will not shut out the lessons that they
+teach.  Oh, tell me that I may sponge away the writing on this stone!
+		-- Charles Dickens
+    </div>
+    <div>
+	<h2> Fifth pane</h2>
+
+Q:	Why do people who live near Niagara Falls have flat foreheads?
+A:	Because every morning they wake up thinking "What *is* that noise?
+	Oh, right, *of course*!
+    </div>
+</div>
 
 
     </body>

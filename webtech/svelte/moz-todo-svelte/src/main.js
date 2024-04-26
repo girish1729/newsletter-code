@@ -1,6 +1,6 @@
-import BarChart from './BarChart.svelte';
+import AreaChart from './AreaChart.svelte';
 
-const app = new BarChart({
+const app = new AreaChart({
 	target: document.body,
 });
 
