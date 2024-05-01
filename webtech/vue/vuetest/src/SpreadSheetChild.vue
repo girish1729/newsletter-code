@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { cells, evalCell } from './store.js'
+import { cells, evalCell } from './sheetstore.js'
 
 const props = defineProps({
   c: Number,

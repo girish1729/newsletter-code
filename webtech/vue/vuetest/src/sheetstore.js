@@ -5,8 +5,8 @@ const COLS = 5
 const ROWS = 20
 
 export const cells = reactive(
-  Array.from(Array(COLS).keys()).map((i) =>
-    Array.from(Array(ROWS).keys()).map((i) => '')
+  Array.from(Array(COLS).keys()).map(() =>
+    Array.from(Array(ROWS).keys()).map(() => '')
   )
 )
 
