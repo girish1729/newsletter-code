@@ -1,6 +1,6 @@
-import AreaChart from './AreaChart.svelte';
+import TextFun from './TextFun.svelte';
 
-const app = new AreaChart({
+const app = new TextFun({
 	target: document.body,
 });
 
