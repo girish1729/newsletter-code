@@ -206,7 +206,7 @@ hx-target="this">
 
   <div
     hx-get="/job/progress"
-    hx-trigger="${job.complete ? 'none' : 'every 600ms'}"
+    hx-trigger="${job.complete ? 'none' : 'every 300ms'}"
     hx-target="this"
     hx-swap="innerHTML">
     ${jobProgressTemplate(job)}
@@ -217,8 +217,7 @@ hx-target="this">
     function restartButton(job) {
       if(job.complete){
         return `
-<button id="restart-btn" class="btn" hx-post="/start" classes="add
-show:600ms">
+<button id="restart-btn" class="btn" hx-post="/start" classes="add show:300ms">
   Restart Job
 </button>`
       } else {
@@ -237,10 +236,10 @@ show:600ms">
           return currentProcess;
         },
         currentProcess : function() {
-          currentProcess.percentComplete += Math.min(100, Math.floor(33
-* Math.random()));  // simulate progress
-          currentProcess.complete = currentProcess.percentComplete >=
-100;
+          currentProcess.percentComplete 
+		+= Math.min(100, Math.floor(33 * Math.random())); 
+          currentProcess.complete = 
+		currentProcess.percentComplete >= 100;
           return currentProcess;
         }
       }

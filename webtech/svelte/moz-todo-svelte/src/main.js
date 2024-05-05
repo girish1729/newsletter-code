@@ -1,6 +1,6 @@
-import TextFun from './TextFun.svelte';
+import EachTutorial from './EachTutorial.svelte';
 
-const app = new TextFun({
+const app = new EachTutorial({
 	target: document.body,
 });
 
