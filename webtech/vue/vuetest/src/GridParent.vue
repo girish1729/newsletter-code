@@ -4,7 +4,7 @@ external data.
 -->
 
 <script setup>
-import DemoGrid from './Grid.vue'
+import DemoGrid from './GridChild.vue'
 import { ref } from 'vue'
 
 const searchQuery = ref('')

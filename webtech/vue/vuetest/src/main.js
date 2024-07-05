@@ -1,4 +1,4 @@
 import { createApp } from 'vue'
-import SpreadSheetParent from './SpreadSheetParent.vue';
+import GridParent from './GridParent.vue';
 
-createApp(SpreadSheetParent).mount('#app')
+createApp(GridParent).mount('#app')
