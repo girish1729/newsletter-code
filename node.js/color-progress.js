@@ -14,13 +14,11 @@ b1.start(2000, 0, {
 
 count = 100;
 setInterval(function() {
-b1.update(count);
-count += 100;
-if(count >= 2000) {
-	b1.update(count);
-	b1.stop();
-	process.exit();
-	}
+    b1.update(count);
+    count += 100;
+    if (count >= 2000) {
+        b1.update(count);
+        b1.stop();
+        process.exit();
+    }
 }, 200);
-
-
